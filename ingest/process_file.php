@@ -22,6 +22,7 @@ use BCC\Myrrix\MyrrixService as MyrrixService;
 					$computedWeight += $values[$x]*$weights[$x-2];				
 				}					
 				fwrite($output_file, $values[0].",".$values[1].",".$computedWeight."\n");				
+				$myrrix->removePreference(intval($values[0]),intval($values[1]));
 				$myrrix->setPreference(intval($values[0]),intval($values[1]),intval($computedWeight));
 			}
 		} else {
