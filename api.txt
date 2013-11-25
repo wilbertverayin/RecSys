@@ -1,0 +1,216 @@
+<?php
+
+namespace BCC\Myrrix;
+
+/**
+ * MyrrixService helps you leverage the Myrrix REST api
+ */
+class MyrrixService
+    /**
+     * @var MyrrixClient
+     */
+    protected $client;
+
+    /**
+     * @param string $host     The hostname
+     * @param int    $port     The port
+     * @param string $username The username
+     * @param string $password The password
+     */
+    function __construct($host, $port, $username = null, $password = null)
+   
+    /**
+     * Gets a recommendation for a known user
+     *
+     * @param int $userId The user id
+     * @param int $count  The number of result to retrieve
+     *
+     * @return array
+     */
+    public function getRecommendation($userId, $count = null)
+   
+
+    /**
+     * Gets a recommendation for a list of known users
+     *
+     * @param array $userIds The user ids
+     * @param int   $count   The number of result to retrieve
+     *
+     * @return array
+     */
+    public function getRecommendationToMany(array $userIds, $count = null)
+   
+    /**
+     * Gets a recommendation for an unknown user, infer its tastes using a preference array.
+     *
+     * @param array $preferences The known preferences of the unknown user
+     * @param int   $count       The number of result to retrieve
+     *
+     * @return array
+     */
+    public function getRecommendationToAnonymous(array $preferences = array(), $count = null)
+   
+    /**
+     * Sets a preference between a user and an item
+     *
+     * @param int   $userId The user id
+     * @param int   $itemId The item id
+     * @param float $value  The strength of the association
+     *
+     * @return bool
+     */
+    public function setPreference($userId, $itemId, $value = null)
+   
+    /**
+     * Sets a batch preference between users and items
+     *
+     * @param array $preferences An array of arrays with keys 'userID', 'itemID' and 'value'
+     *
+     * @return bool
+     */
+    public function setPreferences(array $preferences)
+   
+    /**
+     * Removes a preference between a user and an item
+     *
+     * @param int   $userId The user id
+     * @param int   $itemId The item id
+     *
+     * @return bool
+     */
+    public function removePreference($userId, $itemId)
+
+    /**
+     * Sets an user tag
+     *
+     * @param int    $userId The user id
+     * @param string $tag    The tag name
+     * @param float  $value  The value of the tag
+     *
+     * @return bool
+     */
+    public function setUserTag($userId, $tag, $value = null)
+
+    /**
+     * Removes a tag from an user
+     *
+     * @param int    $userId The user id
+     * @param string $tag    The tag name
+     *
+     * @return bool
+     */
+    public function removeUserTag($userId, $tag)
+
+    /**
+     * Sets an item tag
+     *
+     * @param int    $itemId The item id
+     * @param string $tag    The tag name
+     * @param float  $value  The value of the tag
+     *
+     * @return bool
+     */
+    public function setItemTag($itemId, $tag, $value = null)
+
+    /**
+     * Removes a tag from an item
+     *
+     * @param int    $itemId The item id
+     * @param string $tag    The tag name
+     *
+     * @return bool
+     */
+    public function removeItemTag($itemId, $tag)
+
+    /**
+     * Attempts to explain a recommendation by giving most significant associations of the model.
+     *
+     * @param int   $userId The user id
+     * @param int   $itemId The item id
+     *
+     * @return array
+     */
+    public function getBecause($userId, $itemId)
+
+    /**
+     * Gets recommendation scores for a user and some items
+     * @param int   $userId  The user id
+     * @param array $itemIds The item ids
+     *
+     * @return float[]
+     */
+    public function getEstimations($userId, array $itemIds)
+
+    /**
+     * Gets an estimation for an unknown user, infer its tastes using a preference array.
+     *
+     * @param int   $itemId      The item id
+     * @param array $preferences The known preferences of the unknown user
+     * @param int   $count       The number of result to retrieve
+     *
+     * @return float
+     */
+    public function getEstimationToAnonymous($itemId, array $preferences = array(), $count = null)
+
+    /**
+     * Gets similar items
+     *
+     * @param array $itemIds The item ids
+     * @param int   $count   The number of result to retrieve
+     *
+     * @return array
+     */
+    public function getSimilarItems(array $itemIds, $count = null)
+
+    /**
+     * Gets similarity to items
+     *
+     * @param int   $toItemId
+     * @param array $itemIds The item ids
+     *
+     * @return array
+     */
+    public function getSimilarityToItems($toItemId, array $itemIds)
+
+    /**
+     * Gets most similar items
+     *
+     * @param int $count The number of result to retrieve
+     *
+     * @return array
+     */
+    public function getMostPopularItems($count = null)
+
+    /**
+     * Gets the list of users
+     *
+     * @return int[]
+     */
+    public function getUsers()
+
+    /**
+     * Gets the list of items
+     *
+     * @return int[]
+     */
+    public function getItems()
+
+    /**
+     * Asks Myrrix to refresh, may take time.
+     *
+     * @return bool
+     */
+    public function refresh()
+
+
+    /**
+     * Asks if Myrrix is ready to answer requests.
+     *
+     * @return bool
+     */
+    public function isReady()
+
+    /**
+     * @return MyrrixClient
+     */
+    public function getClient()
