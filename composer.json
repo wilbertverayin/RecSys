@@ -1,0 +1,9 @@
+{
+    "require": {
+    	"guzzle/guzzle": "dev-master",
+        "bcc/myrrix": "dev-master"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~3.7"
+    }
+}
