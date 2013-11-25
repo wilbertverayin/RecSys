@@ -17,8 +17,7 @@ if (mysqli_connect_errno($con)) {
 $myrrix = new MyrrixService('localhost', 8888);
 //sample usages
 $userId = 3;
-$result = $myrrix->setPreference(3,12,0);
-$myrrix->refresh();
+$result = $myrrix->setPreference(3,12,12);
 $result = $myrrix->getRecommendation($userId);
 
 
